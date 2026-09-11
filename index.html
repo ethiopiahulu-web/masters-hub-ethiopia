@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    >
+
+    <meta
+        name="theme-color"
+        content="#0f172a"
+    >
+
+    <title>Masters Hub Ethiopia</title>
+
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ========================================= -->
+    <!-- APP -->
+    <!-- ========================================= -->
+
+    <div id="app">
+
+        <!-- HEADER -->
+        <header class="top-header">
+
+            <div class="brand">
+
+                <div class="brand-icon">
+                    🎓
+                </div>
+
+                <div>
+                    <h1>Masters Hub</h1>
+                    <p>Ethiopia</p>
+                </div>
+
+            </div>
+
+            <button
+                id="profileButton"
+                class="profile-button"
+                onclick="showProfile()"
+            >
+                👤
+            </button>
+
+        </header>
+
+
+        <!-- WELCOME -->
+        <section class="welcome-section">
+
+            <p class="small-label">
+                ACADEMIC SUPPORT PLATFORM
+            </p>
+
+            <h2 id="welcomeTitle">
+                Welcome to Masters Hub
+            </h2>
+
+            <p class="welcome-text">
+                Everything you need for research, SPSS,
+                thesis work and academic success.
+            </p>
+
+        </section>
+
+
+        <!-- SEARCH -->
+        <section class="search-section">
+
+            <div class="search-box">
+
+                <span>🔎</span>
+
+                <input
+                    id="searchInput"
+                    type="text"
+                    placeholder="Search resources, services..."
+                    oninput="searchContent()"
+                >
+
+            </div>
+
+        </section>
+
+
+        <!-- MAIN CONTENT -->
+        <main id="mainContent">
+
+            <!-- QUICK SERVICES -->
+            <section class="section">
+
+                <div class="section-header">
+
+                    <h3>What do you need?</h3>
+
+                    <button onclick="showAllServices()">
+                        See all
+                    </button>
+
+                </div>
+
+
+                <div class="service-grid">
+
+                    <button
+                        class="service-card"
+                        onclick="openSection('spss')"
+                    >
+
+                        <div class="service-icon spss-icon">
+                            📊
+                        </div>
+
+                        <strong>SPSS</strong>
+
+                        <span>
+                            Data analysis
+                        </span>
+
+                    </button>
+
+
+                    <button
+                        class="service-card"
+                        onclick="openSection('thesis')"
+                    >
+
+                        <div class="service-icon thesis-icon">
+                            📝
+                        </div>
+
+                        <strong>Thesis</strong>
+
+                        <span>
+                            Thesis support
+                        </span>
+
+                    </button>
+
+
+                    <button
+                        class="service-card"
+                        onclick="openSection('research')"
+                    >
+
+                        <div class="service-icon research-icon">
+                            📚
+                        </div>
+
+                        <strong>Research</strong>
+
+                        <span>
+                            Research support
+                        </span>
+
+                    </button>
+
+
+                    <button
+                        class="service-card"
+                        onclick="openSection('questionnaires')"
+                    >
+
+                        <div class="service-icon questionnaire-icon">
+                            📋
+                        </div>
+
+                        <strong>Questionnaires</strong>
+
+                        <span>
+                            Research tools
+                        </span>
+
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- FEATURED SERVICES -->
+            <section class="section">
+
+                <div class="section-header">
+
+                    <h3>Academic Services</h3>
+
+                </div>
+
+
+                <div class="large-card">
+
+                    <div class="large-card-icon">
+                        📊
+                    </div>
+
+                    <div class="large-card-content">
+
+                        <h4>SPSS Data Analysis</h4>
+
+                        <p>
+                            Get professional help with your
+                            research data, statistical analysis
+                            and interpretation.
+                        </p>
+
+                        <button
+                            onclick="requestService('SPSS Data Analysis')"
+                        >
+                            Request service
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="large-card">
+
+                    <div class="large-card-icon">
+                        📝
+                    </div>
+
+                    <div class="large-card-content">
+
+                        <h4>Thesis Support</h4>
+
+                        <p>
+                            Proposal, methodology, analysis,
+                            discussion, formatting and research
+                            support.
+                        </p>
+
+                        <button
+                            onclick="requestService('Thesis Support')"
+                        >
+                            Request service
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="large-card">
+
+                    <div class="large-card-icon">
+                        📋
+                    </div>
+
+                    <div class="large-card-content">
+
+                        <h4>Questionnaire Design</h4>
+
+                        <p>
+                            Create professional research
+                            questionnaires ready for data
+                            collection and analysis.
+                        </p>
+
+                        <button
+                            onclick="requestService('Questionnaire Design')"
+                        >
+                            Request service
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- RESOURCES -->
+            <section class="section">
+
+                <div class="section-header">
+
+                    <h3>Resources</h3>
+
+                    <button onclick="showResources()">
+                        View all
+                    </button>
+
+                </div>
+
+
+                <div class="resource-card">
+
+                    <div class="resource-icon">
+                        📁
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Research Templates
+                        </strong>
+
+                        <p>
+                            Proposal and thesis templates
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="resource-card">
+
+                    <div class="resource-icon">
+                        📊
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            SPSS Resources
+                        </strong>
+
+                        <p>
+                            Guides, syntax and datasets
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="resource-card">
+
+                    <div class="resource-icon">
+                        📚
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Research Guides
+                        </strong>
+
+                        <p>
+                            Methodology and academic writing
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- WHY MASTERS HUB -->
+            <section class="section">
+
+                <div class="info-card">
+
+                    <div class="info-icon">
+                        🎓
+                    </div>
+
+                    <h3>
+                        Your Academic Partner
+                    </h3>
+
+                    <p>
+                        Masters Hub Ethiopia connects students
+                        and researchers with academic resources,
+                        professional services and practical
+                        research support.
+                    </p>
+
+                </div>
+
+            </section>
+
+        </main>
+
+
+        <!-- BOTTOM NAVIGATION -->
+        <nav class="bottom-nav">
+
+            <button
+                class="nav-item active"
+                onclick="goHome()"
+            >
+
+                <span>⌂</span>
+
+                <small>
+                    Home
+                </small>
+
+            </button>
+
+
+            <button
+                class="nav-item"
+                onclick="showResources()"
+            >
+
+                <span>📚</span>
+
+                <small>
+                    Resources
+                </small>
+
+            </button>
+
+
+            <button
+                class="nav-item"
+                onclick="showServices()"
+            >
+
+                <span>💼</span>
+
+                <small>
+                    Services
+                </small>
+
+            </button>
+
+
+            <button
+                class="nav-item"
+                onclick="showProfile()"
+            >
+
+                <span>👤</span>
+
+                <small>
+                    Profile
+                </small>
+
+            </button>
+
+        </nav>
+
+
+    </div>
+
+
+    <!-- ========================================= -->
+    <!-- MODAL -->
+    <!-- ========================================= -->
+
+    <div
+        id="modal"
+        class="modal hidden"
+    >
+
+        <div
+            class="modal-overlay"
+            onclick="closeModal()"
+        ></div>
+
+        <div class="modal-content">
+
+            <button
+                class="close-button"
+                onclick="closeModal()"
+            >
+                ×
+            </button>
+
+            <div id="modalBody"></div>
+
+        </div>
+
+    </div>
+
+
+    <script src="app.js"></script>
+
+</body>
+</html>

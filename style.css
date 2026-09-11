@@ -1,0 +1,707 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --primary: #2563eb;
+    --primary-dark: #1d4ed8;
+    --background: #f8fafc;
+    --card: #ffffff;
+    --text: #0f172a;
+    --secondary-text: #64748b;
+    --border: #e2e8f0;
+    --success: #16a34a;
+}
+
+body {
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Arial,
+        sans-serif;
+
+    background: var(--background);
+    color: var(--text);
+
+    min-height: 100vh;
+
+    padding-bottom: 80px;
+}
+
+button,
+input {
+    font-family: inherit;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+}
+
+
+/* =========================================
+   APP
+========================================= */
+
+#app {
+    max-width: 720px;
+    margin: 0 auto;
+    min-height: 100vh;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.top-header {
+    background: #0f172a;
+    color: white;
+
+    padding:
+        calc(16px + env(safe-area-inset-top))
+        20px
+        18px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.brand-icon {
+    width: 44px;
+    height: 44px;
+
+    background: #2563eb;
+
+    border-radius: 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 22px;
+}
+
+.brand h1 {
+    font-size: 19px;
+    font-weight: 700;
+}
+
+.brand p {
+    font-size: 12px;
+    color: #cbd5e1;
+    margin-top: 2px;
+}
+
+.profile-button {
+    width: 40px;
+    height: 40px;
+
+    border-radius: 50%;
+
+    background: #1e293b;
+
+    color: white;
+
+    font-size: 18px;
+}
+
+
+/* =========================================
+   WELCOME
+========================================= */
+
+.welcome-section {
+    background: #0f172a;
+
+    color: white;
+
+    padding:
+        8px
+        20px
+        28px;
+}
+
+.small-label {
+    font-size: 10px;
+    letter-spacing: 1.3px;
+    color: #93c5fd;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.welcome-section h2 {
+    font-size: 26px;
+    line-height: 1.2;
+    margin-bottom: 9px;
+}
+
+.welcome-text {
+    color: #cbd5e1;
+    font-size: 14px;
+    line-height: 1.5;
+    max-width: 550px;
+}
+
+
+/* =========================================
+   SEARCH
+========================================= */
+
+.search-section {
+    padding: 18px 20px 4px;
+}
+
+.search-box {
+    background: white;
+
+    border: 1px solid var(--border);
+
+    border-radius: 13px;
+
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 0 14px;
+
+    box-shadow:
+        0 2px 8px rgba(15, 23, 42, 0.04);
+}
+
+.search-box span {
+    font-size: 17px;
+}
+
+.search-box input {
+    border: none;
+    outline: none;
+
+    flex: 1;
+
+    font-size: 14px;
+
+    background: transparent;
+}
+
+
+/* =========================================
+   SECTIONS
+========================================= */
+
+.section {
+    padding: 20px;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 13px;
+}
+
+.section-header h3 {
+    font-size: 17px;
+}
+
+.section-header button {
+    background: transparent;
+    color: var(--primary);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+
+/* =========================================
+   SERVICE GRID
+========================================= */
+
+.service-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 12px;
+}
+
+.service-card {
+    background: white;
+
+    border: 1px solid var(--border);
+
+    border-radius: 15px;
+
+    padding: 17px;
+
+    text-align: left;
+
+    min-height: 130px;
+
+    transition: transform 0.15s;
+}
+
+.service-card:active {
+    transform: scale(0.97);
+}
+
+.service-icon {
+    width: 42px;
+    height: 42px;
+
+    border-radius: 11px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 21px;
+
+    margin-bottom: 12px;
+}
+
+.spss-icon {
+    background: #dbeafe;
+}
+
+.thesis-icon {
+    background: #fef3c7;
+}
+
+.research-icon {
+    background: #dcfce7;
+}
+
+.questionnaire-icon {
+    background: #fce7f3;
+}
+
+.service-card strong {
+    display: block;
+    font-size: 14px;
+}
+
+.service-card span {
+    display: block;
+
+    color: var(--secondary-text);
+
+    font-size: 12px;
+
+    margin-top: 4px;
+}
+
+
+/* =========================================
+   LARGE SERVICE CARD
+========================================= */
+
+.large-card {
+    background: white;
+
+    border: 1px solid var(--border);
+
+    border-radius: 16px;
+
+    padding: 16px;
+
+    display: flex;
+
+    gap: 14px;
+
+    margin-bottom: 12px;
+}
+
+.large-card-icon {
+    width: 45px;
+    height: 45px;
+
+    flex-shrink: 0;
+
+    border-radius: 12px;
+
+    background: #dbeafe;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 22px;
+}
+
+.large-card-content {
+    flex: 1;
+}
+
+.large-card-content h4 {
+    font-size: 15px;
+
+    margin-bottom: 6px;
+}
+
+.large-card-content p {
+    color: var(--secondary-text);
+
+    font-size: 12px;
+
+    line-height: 1.5;
+
+    margin-bottom: 12px;
+}
+
+.large-card-content button {
+    background: var(--primary);
+
+    color: white;
+
+    padding: 9px 13px;
+
+    border-radius: 8px;
+
+    font-size: 12px;
+
+    font-weight: 600;
+}
+
+.large-card-content button:active {
+    background: var(--primary-dark);
+}
+
+
+/* =========================================
+   RESOURCES
+========================================= */
+
+.resource-card {
+    background: white;
+
+    border: 1px solid var(--border);
+
+    border-radius: 14px;
+
+    padding: 14px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    margin-bottom: 10px;
+}
+
+.resource-icon {
+    width: 42px;
+    height: 42px;
+
+    background: #f1f5f9;
+
+    border-radius: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 19px;
+}
+
+.resource-card strong {
+    font-size: 14px;
+}
+
+.resource-card p {
+    color: var(--secondary-text);
+
+    font-size: 12px;
+
+    margin-top: 3px;
+}
+
+
+/* =========================================
+   INFO
+========================================= */
+
+.info-card {
+    background: #eff6ff;
+
+    border: 1px solid #bfdbfe;
+
+    border-radius: 17px;
+
+    padding: 22px;
+
+    text-align: center;
+}
+
+.info-icon {
+    font-size: 30px;
+
+    margin-bottom: 10px;
+}
+
+.info-card h3 {
+    font-size: 17px;
+
+    margin-bottom: 7px;
+}
+
+.info-card p {
+    color: #475569;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   BOTTOM NAV
+========================================= */
+
+.bottom-nav {
+    position: fixed;
+
+    bottom: 0;
+
+    left: 0;
+    right: 0;
+
+    height: 66px;
+
+    background: rgba(255, 255, 255, 0.96);
+
+    border-top: 1px solid var(--border);
+
+    display: flex;
+
+    justify-content: center;
+
+    z-index: 20;
+
+    backdrop-filter: blur(12px);
+}
+
+.nav-item {
+    background: transparent;
+
+    color: #64748b;
+
+    width: 25%;
+
+    max-width: 170px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 3px;
+}
+
+.nav-item span {
+    font-size: 18px;
+}
+
+.nav-item small {
+    font-size: 10px;
+}
+
+.nav-item.active {
+    color: var(--primary);
+}
+
+
+/* =========================================
+   MODAL
+========================================= */
+
+.modal {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 100;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: center;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.modal-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.45);
+}
+
+.modal-content {
+    position: relative;
+
+    width: 100%;
+
+    max-width: 720px;
+
+    background: white;
+
+    border-radius:
+        22px
+        22px
+        0
+        0;
+
+    padding: 25px 20px 30px;
+
+    max-height: 85vh;
+
+    overflow-y: auto;
+
+    z-index: 101;
+}
+
+.close-button {
+    position: absolute;
+
+    top: 13px;
+    right: 16px;
+
+    width: 32px;
+    height: 32px;
+
+    border-radius: 50%;
+
+    background: #f1f5f9;
+
+    color: #475569;
+
+    font-size: 22px;
+}
+
+
+/* =========================================
+   MODAL CONTENT
+========================================= */
+
+.modal-title {
+    font-size: 21px;
+
+    margin-bottom: 10px;
+}
+
+.modal-text {
+    color: #64748b;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+    margin-bottom: 18px;
+}
+
+.modal-button {
+    width: 100%;
+
+    background: var(--primary);
+
+    color: white;
+
+    border-radius: 11px;
+
+    padding: 13px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    margin-top: 8px;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 380px) {
+
+    .welcome-section h2 {
+        font-size: 23px;
+    }
+
+    .service-card {
+        padding: 14px;
+    }
+
+    .section {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+}
+
+
+/* =========================================
+   DARK TELEGRAM THEME SUPPORT
+========================================= */
+
+body.telegram-dark {
+    --background: #0e1621;
+    --card: #17212b;
+    --text: #ffffff;
+    --secondary-text: #a8b3c2;
+    --border: #263746;
+
+    background: var(--background);
+    color: var(--text);
+}
+
+body.telegram-dark .service-card,
+body.telegram-dark .large-card,
+body.telegram-dark .resource-card,
+body.telegram-dark .search-box,
+body.telegram-dark .modal-content {
+    background: var(--card);
+    border-color: var(--border);
+}
+
+body.telegram-dark .bottom-nav {
+    background: rgba(23, 33, 43, 0.96);
+    border-color: var(--border);
+}
+
+body.telegram-dark .info-card {
+    background: #172b40;
+    border-color: #244c70;
+}
+
+body.telegram-dark .info-card p {
+    color: #b8c7d9;
+}
