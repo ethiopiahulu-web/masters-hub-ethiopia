@@ -10,8 +10,7 @@
    CONFIGURATION
    ========================================================= */
 
-const API_URL =
-  "https://script.google.com/macros/s/AKfycbyZ7OacV-r4FJFESbg9bLT11nGoRpjlG5oJZFIURBObG_ZoQllRckcUXJd9Ldh7oqVb/exec";
+const API_URL = "/api";
 
 
 /* =========================================================
