@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,17 +14,24 @@
         content="#0f172a"
     >
 
+    <meta
+        name="description"
+        content="Masters Hub Ethiopia - Academic research, SPSS, thesis and academic support services."
+    >
+
     <title>Masters Hub Ethiopia</title>
 
+    <!-- Telegram Mini App -->
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
 
+    <!-- App Styles -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
     <!-- ========================================= -->
-    <!-- APP -->
+    <!-- MAIN APPLICATION -->
     <!-- ========================================= -->
 
     <div id="app">
@@ -47,7 +55,9 @@
             <button
                 id="profileButton"
                 class="profile-button"
+                type="button"
                 onclick="showProfile()"
+                aria-label="Open profile"
             >
                 👤
             </button>
@@ -83,8 +93,9 @@
 
                 <input
                     id="searchInput"
-                    type="text"
+                    type="search"
                     placeholder="Search resources, services..."
+                    autocomplete="off"
                     oninput="searchContent()"
                 >
 
@@ -103,7 +114,10 @@
 
                     <h3>What do you need?</h3>
 
-                    <button onclick="showAllServices()">
+                    <button
+                        type="button"
+                        onclick="showAllServices()"
+                    >
                         See all
                     </button>
 
@@ -112,8 +126,10 @@
 
                 <div class="service-grid">
 
+                    <!-- SPSS -->
                     <button
                         class="service-card"
+                        type="button"
                         onclick="openSection('spss')"
                     >
 
@@ -130,8 +146,10 @@
                     </button>
 
 
+                    <!-- THESIS -->
                     <button
                         class="service-card"
+                        type="button"
                         onclick="openSection('thesis')"
                     >
 
@@ -148,8 +166,10 @@
                     </button>
 
 
+                    <!-- RESEARCH -->
                     <button
                         class="service-card"
+                        type="button"
                         onclick="openSection('research')"
                     >
 
@@ -166,8 +186,10 @@
                     </button>
 
 
+                    <!-- QUESTIONNAIRES -->
                     <button
                         class="service-card"
+                        type="button"
                         onclick="openSection('questionnaires')"
                     >
 
@@ -198,6 +220,7 @@
                 </div>
 
 
+                <!-- SPSS -->
                 <div class="large-card">
 
                     <div class="large-card-icon">
@@ -206,7 +229,9 @@
 
                     <div class="large-card-content">
 
-                        <h4>SPSS Data Analysis</h4>
+                        <h4>
+                            SPSS Data Analysis
+                        </h4>
 
                         <p>
                             Get professional help with your
@@ -215,6 +240,7 @@
                         </p>
 
                         <button
+                            type="button"
                             onclick="requestService('SPSS Data Analysis')"
                         >
                             Request service
@@ -225,6 +251,7 @@
                 </div>
 
 
+                <!-- THESIS -->
                 <div class="large-card">
 
                     <div class="large-card-icon">
@@ -233,7 +260,9 @@
 
                     <div class="large-card-content">
 
-                        <h4>Thesis Support</h4>
+                        <h4>
+                            Thesis Support
+                        </h4>
 
                         <p>
                             Proposal, methodology, analysis,
@@ -242,6 +271,7 @@
                         </p>
 
                         <button
+                            type="button"
                             onclick="requestService('Thesis Support')"
                         >
                             Request service
@@ -252,6 +282,7 @@
                 </div>
 
 
+                <!-- QUESTIONNAIRE -->
                 <div class="large-card">
 
                     <div class="large-card-icon">
@@ -260,7 +291,9 @@
 
                     <div class="large-card-content">
 
-                        <h4>Questionnaire Design</h4>
+                        <h4>
+                            Questionnaire Design
+                        </h4>
 
                         <p>
                             Create professional research
@@ -269,6 +302,7 @@
                         </p>
 
                         <button
+                            type="button"
                             onclick="requestService('Questionnaire Design')"
                         >
                             Request service
@@ -288,14 +322,22 @@
 
                     <h3>Resources</h3>
 
-                    <button onclick="showResources()">
+                    <button
+                        type="button"
+                        onclick="showResources()"
+                    >
                         View all
                     </button>
 
                 </div>
 
 
-                <div class="resource-card">
+                <!-- RESEARCH TEMPLATES -->
+                <button
+                    class="resource-card"
+                    type="button"
+                    onclick="openResource('templates')"
+                >
 
                     <div class="resource-icon">
                         📁
@@ -313,10 +355,15 @@
 
                     </div>
 
-                </div>
+                </button>
 
 
-                <div class="resource-card">
+                <!-- SPSS RESOURCES -->
+                <button
+                    class="resource-card"
+                    type="button"
+                    onclick="openResource('spss')"
+                >
 
                     <div class="resource-icon">
                         📊
@@ -334,10 +381,15 @@
 
                     </div>
 
-                </div>
+                </button>
 
 
-                <div class="resource-card">
+                <!-- RESEARCH GUIDES -->
+                <button
+                    class="resource-card"
+                    type="button"
+                    onclick="openResource('research')"
+                >
 
                     <div class="resource-icon">
                         📚
@@ -355,7 +407,7 @@
 
                     </div>
 
-                </div>
+                </button>
 
             </section>
 
@@ -387,11 +439,16 @@
         </main>
 
 
+        <!-- ========================================= -->
         <!-- BOTTOM NAVIGATION -->
+        <!-- ========================================= -->
+
         <nav class="bottom-nav">
 
+            <!-- HOME -->
             <button
                 class="nav-item active"
+                type="button"
                 onclick="goHome()"
             >
 
@@ -404,8 +461,10 @@
             </button>
 
 
+            <!-- RESOURCES -->
             <button
                 class="nav-item"
+                type="button"
                 onclick="showResources()"
             >
 
@@ -418,8 +477,10 @@
             </button>
 
 
+            <!-- SERVICES -->
             <button
                 class="nav-item"
+                type="button"
                 onclick="showServices()"
             >
 
@@ -432,8 +493,10 @@
             </button>
 
 
+            <!-- PROFILE -->
             <button
                 class="nav-item"
+                type="button"
                 onclick="showProfile()"
             >
 
@@ -447,7 +510,6 @@
 
         </nav>
 
-
     </div>
 
 
@@ -458,6 +520,9 @@
     <div
         id="modal"
         class="modal hidden"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modalTitle"
     >
 
         <div
@@ -465,11 +530,14 @@
             onclick="closeModal()"
         ></div>
 
+
         <div class="modal-content">
 
             <button
                 class="close-button"
+                type="button"
                 onclick="closeModal()"
+                aria-label="Close"
             >
                 ×
             </button>
@@ -481,7 +549,37 @@
     </div>
 
 
+    <!-- ========================================= -->
+    <!-- APPLICATION JAVASCRIPT -->
+    <!-- ========================================= -->
+
     <script src="app.js"></script>
 
 </body>
 </html>
+```
+
+### Now do this
+
+Replace your existing:
+
+```text
+C:\Users\Ethio\masters_hub_telegram\mini_app\index.html
+```
+
+with the complete code above.
+
+Then open **CMD** and run:
+
+```cmd
+cd C:\Users\Ethio\masters_hub_telegram\mini_app
+git add index.html app.js
+git commit -m "Finalize Masters Hub Mini App"
+git push
+```
+
+Cloudflare should then deploy the updated GitHub version automatically.
+
+**Important:** I also changed the resource cards into actual buttons so the existing `openResource()` functions in your new `app.js` can work when users tap them. Your original file had those cards as non-clickable `<div>` elements.
+
+After this, the next major step is **payment re**
